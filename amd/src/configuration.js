@@ -16,7 +16,7 @@
 /**
  * Tiny tiny_codehighlighter for Moodle.
  *
- * @module      plugintype_pluginname/plugin
+ * @module      tiny_codehighlighter/plugin
  * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -24,7 +24,7 @@
 import {
     startdemoButtonName,
     startdemoMenuItemName,
-} from './common';
+} from 'tiny_codehighlighter/common';
 
 import {
     addMenubarItem,

@@ -25,6 +25,8 @@
 namespace tiny_codehighlighter;
 
 use context;
+use context_system;
+use editor_tiny\editor;
 use editor_tiny\plugin;
 use editor_tiny\plugin_with_buttons;
 use editor_tiny\plugin_with_menuitems;
@@ -48,6 +50,7 @@ class plugininfo extends plugin implements plugin_with_configuration, plugin_wit
         context $context,
         array $options,
         array $fpoptions,
+        // ?editor $editor = null
         ?\editor_tiny\editor $editor = null
     ): array {
         return [

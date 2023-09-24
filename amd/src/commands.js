@@ -16,7 +16,7 @@
 /**
  * Commands helper for the Moodle tiny_codehighlighter plugin.
  *
- * @module      plugintype_pluginname/commands
+ * @module      tiny_codehighlighter/commands
  * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,7 +28,7 @@ import {
     startdemoButtonName,
     startdemoMenuItemName,
     icon,
-} from './common';
+} from 'tiny_codehighlighter/common';
 
 /**
  * Handle the action for your plugin.

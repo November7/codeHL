@@ -16,18 +16,20 @@
 /**
  * Tiny tiny_codehighlighter for Moodle.
  *
- * @module      plugintype_pluginname/plugin
+ * @module      tiny_codehighlighter/plugin
  * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {getTinyMCE} from 'editor_tiny/loader';
+
 import {getPluginMetadata} from 'editor_tiny/utils';
 
-import {component, pluginName} from './common';
-import {register as registerOptions} from './options';
-import {getSetup as getCommandSetup} from './commands';
-import * as Configuration from './configuration';
+
+import {component, pluginName} from 'tiny_codehighlighter/common';
+import * as Commands from 'tiny_codehighlighter/commands';
+import * as Configuration from 'tiny_codehighlighter/configuration';
+import * as Options from 'tiny_codehighlighter/options';
 
 // Setup the tiny_codehighlighter Plugin.
 export default new Promise(async(resolve) => {
@@ -39,21 +41,20 @@ export default new Promise(async(resolve) => {
         setupCommands,
     ] = await Promise.all([
         getTinyMCE(),
+        Commands.getSetup(),
         getPluginMetadata(component, pluginName),
-        getCommandSetup(),
     ]);
 
     // Reminder: Any asynchronous code must be run before this point.
-    tinyMCE.PluginManager.add(pluginName, (editor) => {
-        // Register any options that your plugin has
-        registerOptions(editor);
+    tinyMCE.PluginManager.add(`${component}/plugin`, (editor) => {
+        // Register options.
+        Options.register(editor);
 
-        // Setup any commands such as buttons, menu items, and so on.
+        // Setup the Commands (buttons, menu items, and so on).
         setupCommands(editor);
 
-        // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
         return pluginMetadata;
     });
 
-    resolve([pluginName, Configuration]);
+    resolve([`${component}/plugin`, Configuration]);
 });

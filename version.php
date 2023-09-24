@@ -26,4 +26,4 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_codehighlighter';
 $plugin->release = '0.1.0';
-$plugin->version = 2023092302;
+$plugin->version = 2023092401;

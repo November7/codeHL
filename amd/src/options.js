@@ -16,13 +16,13 @@
 /**
  * Options helper for the Moodle tiny_codehighlighter plugin.
  *
- * @module      plugintype_pluginname/options
+ * @module      tiny_codehighlighter/options
  * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {getPluginOptionName} from 'editor_tiny/options';
-import {pluginName} from './common';
+import {pluginName} from 'tiny_codehighlighter/common';
 
 // Helper variables for the option names.
 const myFirstPropertyName = getPluginOptionName(pluginName, 'myFirstProperty');

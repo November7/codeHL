@@ -27,6 +27,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['button_startdemo'] = 'Start demo';
 $string['menuitem_startdemo'] = 'Start the demo';
-$string['pluginname'] = 'Start the demo';
 $string['pluginname'] = 'Code Highlighter';
 $string['privacy:metadata'] = 'Code Highlighter does not store any personal data';

@@ -16,17 +16,17 @@
 /**
  * Common values helper for the Moodle tiny_codehighlighter plugin.
  *
- * @module      plugintype_pluginname/common
+ * @module      tiny_codehighlighter/common
  * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-const component = 'tiny_codehighlighter';
+// const component = 'tiny_codehighlighter';
 
 export default {
-    component,
-    pluginName: `${component}/plugin`,
-    icon: component,
-    startdemoButtonName: `${component}_startdemo`,
-    startdemoMenuItemName: `${component}_startdemo`,
+    pluginName: 'tiny_codehighlighter/plugin',
+    component: 'tiny_codehighlighter',
+    // icon: component,
+    startdemoButtonName: 'tiny_codehighlighter/_startdemo',
+    startdemoMenuItemName: 'tiny_codehighlighter/_startdemo',
 };
