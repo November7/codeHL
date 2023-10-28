@@ -14,19 +14,18 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Common values helper for the Moodle tiny_codehighlighter plugin.
+ * Common values helper for the Moodle tiny_test plugin.
  *
- * @module      tiny_codehighlighter/common
- * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
+ * @module      plugintype_pluginname/common
+ * @copyright   2023 me <som@domain.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// const component = 'tiny_codehighlighter';
+const component = 'tiny_codehighlighter';
 
 export default {
-    pluginName: 'tiny_codehighlighter/plugin',
-    component: 'tiny_codehighlighter',
-    // icon: component,
-    startdemoButtonName: 'tiny_codehighlighter/_startdemo',
-    startdemoMenuItemName: 'tiny_codehighlighter/_startdemo',
+    component,
+    pluginName: `${component}/plugin`,
+    buttonName: component,
+    icon: component,
 };

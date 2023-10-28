@@ -17,15 +17,12 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     tiny_codehighlighter
+ * @package     tiny_test
  * @category    string
- * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
+ * @copyright   2023 me <som@domain.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['button_startdemo'] = 'Start demo';
-$string['menuitem_startdemo'] = 'Start the demo';
-$string['pluginname'] = 'Code Highlighter';
-$string['privacy:metadata'] = 'Code Highlighter does not store any personal data';
+$string['pluginname'] = 'test';

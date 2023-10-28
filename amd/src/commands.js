@@ -14,21 +14,16 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Commands helper for the Moodle tiny_codehighlighter plugin.
+ * Commands helper for the Moodle tiny_test plugin.
  *
- * @module      tiny_codehighlighter/commands
- * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
+ * @module      plugintype_pluginname/commands
+ * @copyright   2023 me <som@domain.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {getButtonImage} from 'editor_tiny/utils';
 import {get_string as getString} from 'core/str';
-import {
-    component,
-    startdemoButtonName,
-    startdemoMenuItemName,
-    icon,
-} from 'tiny_codehighlighter/common';
+import {component, icon, buttonName} from './common';
 
 /**
  * Handle the action for your plugin.
@@ -37,6 +32,7 @@ import {
 const handleAction = (editor) => {
     // TODO Handle the action.
     window.console.log(editor);
+    window.console.log("works!");
 };
 
 /**
@@ -49,12 +45,10 @@ const handleAction = (editor) => {
  */
 export const getSetup = async() => {
     const [
-        startdemoButtonNameTitle,
-        startdemoMenuItemNameTitle,
+        buttonText,
         buttonImage,
     ] = await Promise.all([
-        getString('button_startdemo', component),
-        getString('menuitem_startdemo', component),
+        getString('buttontitle', component),
         getButtonImage('icon', component),
     ]);
 
@@ -62,18 +56,24 @@ export const getSetup = async() => {
         // Register the Moodle SVG as an icon suitable for use as a TinyMCE toolbar button.
         editor.ui.registry.addIcon(icon, buttonImage.html);
 
-        // Register the startdemo Toolbar Button.
-        editor.ui.registry.addButton(startdemoButtonName, {
+
+        editor.ui.registry.addToggleButton(buttonName, {
             icon,
-            tooltip: startdemoButtonNameTitle,
-            onAction: () => handleAction(editor),
+            tooltip: buttonText,
+            onAction: () => {
+                handleAction(editor);
+            },
+            // onSetup: (api) => {
+            //     editor.on('NodeChange', () => {
+            //         // const result = getSelectedEquation(editor);
+            //         // api.setActive(result);
+            //     });
+            // },
         });
 
-        // Add the startdemo Menu Item.
-        // This allows it to be added to a standard menu, or a context menu.
-        editor.ui.registry.addMenuItem(startdemoMenuItemName, {
+        editor.ui.registry.addMenuItem(buttonName, {
             icon,
-            text: startdemoMenuItemNameTitle,
+            text: buttonText,
             onAction: () => handleAction(editor),
         });
     };

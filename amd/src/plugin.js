@@ -14,24 +14,21 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Tiny tiny_codehighlighter for Moodle.
+ * Tiny tiny_test for Moodle.
  *
- * @module      tiny_codehighlighter/plugin
- * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
+ * @module      plugintype_pluginname/plugin
+ * @copyright   2023 me <som@domain.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {getTinyMCE} from 'editor_tiny/loader';
-
 import {getPluginMetadata} from 'editor_tiny/utils';
 
+import {component, pluginName} from './common';
+import {getSetup as getCommandSetup} from './commands';
+import * as Configuration from './configuration';
 
-import {component, pluginName} from 'tiny_codehighlighter/common';
-import * as Commands from 'tiny_codehighlighter/commands';
-import * as Configuration from 'tiny_codehighlighter/configuration';
-import * as Options from 'tiny_codehighlighter/options';
-
-// Setup the tiny_codehighlighter Plugin.
+// Setup the tiny_test Plugin.
 export default new Promise(async(resolve) => {
     // Note: The PluginManager.add function does not support asynchronous configuration.
     // Perform any asynchronous configuration here, and then call the PluginManager.add function.
@@ -41,20 +38,18 @@ export default new Promise(async(resolve) => {
         setupCommands,
     ] = await Promise.all([
         getTinyMCE(),
-        Commands.getSetup(),
         getPluginMetadata(component, pluginName),
+        getCommandSetup(),
     ]);
 
     // Reminder: Any asynchronous code must be run before this point.
-    tinyMCE.PluginManager.add(`${component}/plugin`, (editor) => {
-        // Register options.
-        Options.register(editor);
-
-        // Setup the Commands (buttons, menu items, and so on).
+    tinyMCE.PluginManager.add(pluginName, (editor) => {
+        // Setup any commands such as buttons, menu items, and so on.
         setupCommands(editor);
 
+        // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
         return pluginMetadata;
     });
 
-    resolve([`${component}/plugin`, Configuration]);
+    resolve([pluginName, Configuration]);
 });

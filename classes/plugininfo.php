@@ -15,48 +15,31 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Tiny Code Highlighter plugin for Moodle.
+ * Tiny test plugin for Moodle.
  *
- * @package     tiny_codehighlighter
- * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
+ * @package     tiny_test
+ * @copyright   2023 me <som@domain.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace tiny_codehighlighter;
+namespace tiny_test;
 
 use context;
-use context_system;
-use editor_tiny\editor;
 use editor_tiny\plugin;
 use editor_tiny\plugin_with_buttons;
 use editor_tiny\plugin_with_menuitems;
-use editor_tiny\plugin_with_configuration;
 
-class plugininfo extends plugin implements plugin_with_configuration, plugin_with_buttons, plugin_with_menuitems {
+class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menuitems {
 
     public static function get_available_buttons(): array {
         return [
-            'tiny_codehighlighter/plugin',
+            'tiny_test/plugin',
         ];
     }
 
     public static function get_available_menuitems(): array {
         return [
-            'tiny_codehighlighter/plugin',
-        ];
-    }
-
-    public static function get_plugin_configuration_for_context(
-        context $context,
-        array $options,
-        array $fpoptions,
-        // ?editor $editor = null
-        ?\editor_tiny\editor $editor = null
-    ): array {
-        return [
-            // Your values go here.
-            // These will be mapped to a namespaced EditorOption in Tiny.
-            'myFirstProperty' => 'TODO Calculate your values here',
+            'tiny_test/plugin',
         ];
     }
 }

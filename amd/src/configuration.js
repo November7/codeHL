@@ -14,44 +14,54 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Tiny tiny_codehighlighter for Moodle.
+ * Tiny tiny_test for Moodle.
  *
- * @module      tiny_codehighlighter/plugin
- * @copyright   2023 Marcin Kowalski <m.kowalski.nov7@gmail.com>
+ * @module      plugintype_pluginname/plugin
+ * @copyright   2023 me <som@domain.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-import {
-    startdemoButtonName,
-    startdemoMenuItemName,
-} from 'tiny_codehighlighter/common';
+import {component as buttonName}  from './common';
+
+// import {
+//     addMenubarItem,
+//     addToolbarButtons,
+// } from 'editor_tiny/utils';
+
+// const getToolbarConfiguration = (instanceConfig) => {
+//     let toolbar = instanceConfig.toolbar;
+
+//     return toolbar;
+// };
+
+// const getMenuConfiguration = (instanceConfig) => {
+//     let menu = instanceConfig.menu;
+
+//     return menu;
+// };
+
+// export const configure = (instanceConfig) => {
+//     return {
+//         toolbar: getToolbarConfiguration(instanceConfig),
+//         menu: getMenuConfiguration(instanceConfig),
+//     };
+// };
 
 import {
     addMenubarItem,
-    addToolbarButtons,
+    addToolbarButton,
+    addToolbarSection,
 } from 'editor_tiny/utils';
 
-const getToolbarConfiguration = (instanceConfig) => {
-    let toolbar = instanceConfig.toolbar;
-    toolbar = addToolbarButtons(toolbar, 'content', [
-        startdemoButtonName,
-    ]);
-
-    return toolbar;
-};
-
-const getMenuConfiguration = (instanceConfig) => {
-    let menu = instanceConfig.menu;
-    menu = addMenubarItem(menu, 'file', [
-        startdemoMenuItemName,
-    ].join(' '));
-
-    return menu;
+const configureToolbar = (toolbar) => {
+    addToolbarSection(toolbar, 'adv', 'lists', true);
+    return addToolbarButton(toolbar, 'adv', buttonName);
 };
 
 export const configure = (instanceConfig) => {
+    // Update the instance configuration to add the Equation menu option to the menus and toolbars.
     return {
-        toolbar: getToolbarConfiguration(instanceConfig),
-        menu: getMenuConfiguration(instanceConfig),
+        menu: addMenubarItem(instanceConfig.menu, 'insert', buttonName),
+        toolbar: configureToolbar(instanceConfig.toolbar),
     };
 };
