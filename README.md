@@ -1,5 +1,5 @@
 # CodeHighlighter
-CodeHighlighter for TinyMCE 5.0
+CodeHighlighter for TinyMCE 6.0
 
 ## Hitory
 2023.09.23 Init
