@@ -15,14 +15,14 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Tiny test plugin for Moodle.
+ * Tiny codehighlighter plugin for Moodle.
  *
- * @package     tiny_test
+ * @package     tiny_codehighlighter
  * @copyright   2023 me <som@domain.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace tiny_test;
+namespace tiny_codehighlighter;
 
 use context;
 use editor_tiny\plugin;
@@ -33,13 +33,13 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
 
     public static function get_available_buttons(): array {
         return [
-            'tiny_test/plugin',
+            'tiny_codehighlighter/plugin',
         ];
     }
 
     public static function get_available_menuitems(): array {
         return [
-            'tiny_test/plugin',
+            'tiny_codehighlighter/plugin',
         ];
     }
 }

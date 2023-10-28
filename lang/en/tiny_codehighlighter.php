@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     tiny_test
+ * @package     tiny_codehighlighter
  * @category    string
  * @copyright   2023 me <som@domain.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,4 +25,4 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'test';
+$string['pluginname'] = 'codehighlighter';
