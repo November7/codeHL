@@ -14,10 +14,10 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Common values helper for the Moodle tiny_test plugin.
+ * CodeHighlighter for TinyMCE.
  *
- * @module      plugintype_pluginname/common
- * @copyright   2023 me <som@domain.com>
+ * @module      tiny_codehighlighter/common
+ * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

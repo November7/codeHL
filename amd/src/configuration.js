@@ -14,44 +14,16 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Tiny tiny_test for Moodle.
+ * CodeHighlighter for TinyMCE.
  *
- * @module      plugintype_pluginname/plugin
- * @copyright   2023 me <som@domain.com>
+ * @module      tiny_codehighlighter/configuration
+ * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {component as buttonName}  from './common';
 
-// import {
-//     addMenubarItem,
-//     addToolbarButtons,
-// } from 'editor_tiny/utils';
-
-// const getToolbarConfiguration = (instanceConfig) => {
-//     let toolbar = instanceConfig.toolbar;
-
-//     return toolbar;
-// };
-
-// const getMenuConfiguration = (instanceConfig) => {
-//     let menu = instanceConfig.menu;
-
-//     return menu;
-// };
-
-// export const configure = (instanceConfig) => {
-//     return {
-//         toolbar: getToolbarConfiguration(instanceConfig),
-//         menu: getMenuConfiguration(instanceConfig),
-//     };
-// };
-
-import {
-    addMenubarItem,
-    addToolbarButton,
-    addToolbarSection,
-} from 'editor_tiny/utils';
+import {addMenubarItem, addToolbarButton, addToolbarSection, } from 'editor_tiny/utils';
 
 const configureToolbar = (toolbar) => {
     addToolbarSection(toolbar, 'adv', 'lists', true);

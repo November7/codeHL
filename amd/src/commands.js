@@ -14,26 +14,18 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Commands helper for the Moodle tiny_test plugin.
+ * CodeHighlighter for TinyMCE.
  *
- * @module      plugintype_pluginname/commands
- * @copyright   2023 me <som@domain.com>
+ * @module      tiny_codehighlighter/commands
+ * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {getButtonImage} from 'editor_tiny/utils';
 import {get_string as getString} from 'core/str';
 import {component, icon, buttonName} from './common';
+import {handleAction} from './ui';
 
-/**
- * Handle the action for your plugin.
- * @param {TinyMCE.editor} editor The tinyMCE editor instance.
- */
-const handleAction = (editor) => {
-    // TODO Handle the action.
-    window.console.log(editor);
-    window.console.log("works!");
-};
 
 /**
  * Get the setup function for the buttons.
@@ -63,12 +55,6 @@ export const getSetup = async() => {
             onAction: () => {
                 handleAction(editor);
             },
-            // onSetup: (api) => {
-            //     editor.on('NodeChange', () => {
-            //         // const result = getSelectedEquation(editor);
-            //         // api.setActive(result);
-            //     });
-            // },
         });
 
         editor.ui.registry.addMenuItem(buttonName, {
