@@ -29,16 +29,16 @@
 
     Example context (json):
     {
-        "elementid": "exampleId",
-        "texdocsurl": "http://abc.com",
-        "equation": "\\Downarrow ",
-        "delimiters": {
-            "start": "",
-            "end": ""
+        'elementid': 'exampleId',
+        'texdocsurl': 'http://abc.com',
+        'equation': '\\Downarrow ',
+        'delimiters': {
+            'start': '',
+            'end': ''
         },
-        "libraries": {
-            "group1": [
-                "\\Downarrow "
+        'libraries': {
+            'group1': [
+                '\\Downarrow '
             ]
         }
     }
@@ -46,18 +46,31 @@
 {{< core/modal }}
 
     {{$title}}
-       <p>Add some code </p>
+        {{#str}} modaltitle, tiny_codehighlighter {{/str}}
     {{/title}}
 
     {{$body}}
-        <div>
-        test
-        </div>
+        <form class='mform' id='{{uniqid}}''>
+            <label for='{{elementid}}_tiny_codehighlighter'>{{#str}} editcode, tiny_codehighlighter{{/str}}</label>
+            <textarea class='fullwidth text-ltr w-100' id='{{elementid}}_tiny_codehighlighter' rows='8'>{{equation}}</textarea>
+            <fieldset>
+            <legend>{{#str}}legend, tiny_codehighlighter{{/str}}</legend>
+            <label for='{{elementid}}_tiny_codehihlighter_langugage'>{{#str}}selectlanguage, tiny_codehighlighter{{/str}}</label>
+            <select name='{{elementid}}_tiny_codehihlighter_langugage'>
+            <option value=''>C/C++</option>
+            <option value=''>Python</option>
+            <option value=''>Shell</option>
+            <option value=''>PHP</option>
+            </select><br/>
+            <label for='{{elementid}}_tiny_codehihlighter_linesnumbers'>{{#str}}linesnumbers, tiny_codehighlighter{{/str}}</label>
+            <input type='checkbox' name='{{elementid}}_tiny_codehihlighter_linesnumbers' checked>
+            </fieldset>
+        </form>
 
     {{/body}}
 
     {{$footer}}
-        <p>Code Highlighter for TinyMCE by Nov7</p> 
+        <button type='button' class='btn btn-primary' data-action='save'>{{#str}} savecode, tiny_codehighlighter{{/str}}</button>
     {{/footer}}
 
 {{/ core/modal }}

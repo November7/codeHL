@@ -26,3 +26,10 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'codehighlighter';
+$string['modaltitle'] = 'Insert code';
+$string['editcode'] = 'Edit code';
+$string['savecode'] = 'Save code';
+$string['legend'] = 'Options';
+$string['selectlanguage'] = 'Select programming langugage';
+$string['linesnumbers'] = 'Enable lines numbers';
+

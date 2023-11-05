@@ -33,7 +33,7 @@ import LinkModal from './modal';
 
 export const handleAction = (editor) => {
     displayDialogue(editor);
-    window.console.log("works!");
+    window.console.log("works...");
 };
 
 /**
