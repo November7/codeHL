@@ -33,7 +33,7 @@ import LinkModal from './modal';
 
 export const handleAction = (editor) => {
     displayDialogue(editor);
-    window.console.log("works...");
+    editor.insertContent("insert content");
 };
 
 /**
@@ -47,7 +47,7 @@ const displayDialogue = async(editor) => {
     const modalPromises = await ModalFactory.create({
         type: LinkModal.TYPE,
         templateContext: getTemplateContext(editor,data),
-        large: false,
+        large: true,
     });
 
     modalPromises.show();
