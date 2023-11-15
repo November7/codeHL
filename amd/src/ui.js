@@ -24,6 +24,7 @@
 import ModalFactory from 'core/modal_factory';
 import ModalEvents from 'core/modal_events';
 import LinkModal from './modal';
+// import {debounce} from 'core/utils';
 
 /**
  * Handle action.
@@ -33,7 +34,6 @@ import LinkModal from './modal';
 
 export const handleAction = (editor) => {
     displayDialogue(editor);
-    editor.insertContent("insert content");
 };
 
 /**
@@ -55,6 +55,13 @@ const displayDialogue = async(editor) => {
 
     $root.on(ModalEvents.hidden, () => {
         modalPromises.destroy();
+    });
+
+
+    let btn = document.getElementById('save_tiny_codehighlighter');
+    btn.addEventListener('click', () => {
+        const item = document.getElementById('id_content_editor_tiny_codehighlighter');
+        editor.insertContent(item.value);
     });
 };
 
