@@ -59,9 +59,39 @@ const displayDialogue = async(editor) => {
 
 
     let btn = document.getElementById('save_tiny_codehighlighter');
+    let lan = document.getElementById('id_content_editor_tiny_codehihlighter_langugage');
     btn.addEventListener('click', () => {
         const item = document.getElementById('id_content_editor_tiny_codehighlighter');
-        editor.insertContent(item.value);
+
+        const getSelectedText = (e) => {
+            if (e.selectedIndex === -1) {return null;}
+            return e.options[e.selectedIndex].text;
+        };
+
+        let splitted = item.value.split(/\r?\n/);
+        let lineNumbers = "", codeLines = "";
+        let lineNumer = 1;
+        let content = "";
+        content += '<div class="codehl">';
+        content += '<div class="chLang_'+lan.value+' chParser_JS" style="width: 95%;"';// data-language="cpp" ';
+        content += 'data-parser="JS" data-mce-style="width: 95%;">';
+        content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
+        content += '<span class="language">CodeHL 3.0 [pre-alpha] <b>['+getSelectedText(lan);
+        content +=']</b></span></th></tr></thead><tbody><tr><td>';
+
+        window.console.log("Language "+lan.value);
+
+        for(let el in splitted)
+        {
+            lineNumbers += "<pre>"+(lineNumer++)+"</pre>";
+            codeLines += "<pre>"+splitted[el]+"</pre>";
+        }
+        content += lineNumbers;
+        content += '</td><td>';
+        content += codeLines;
+        content += '</td></tr></tbody></table></div></div>';
+
+        editor.insertContent(content);
     });
 };
 
