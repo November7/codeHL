@@ -24,6 +24,8 @@
 import ModalFactory from 'core/modal_factory';
 import ModalEvents from 'core/modal_events';
 import LinkModal from './modal';
+import {insertCode,getSelectedCode} from './highlighter';
+
 // import {debounce} from 'core/utils';
 
 /**
@@ -53,45 +55,18 @@ const displayDialogue = async(editor) => {
     modalPromises.show();
     const $root = await modalPromises.getRoot();
 
+    const item = document.getElementById('id_content_editor_tiny_codehighlighter');
+
+    item.value = getSelectedCode(editor);
+
     $root.on(ModalEvents.hidden, () => {
         modalPromises.destroy();
     });
 
 
     let btn = document.getElementById('save_tiny_codehighlighter');
-    let lan = document.getElementById('id_content_editor_tiny_codehihlighter_langugage');
     btn.addEventListener('click', () => {
-        const item = document.getElementById('id_content_editor_tiny_codehighlighter');
-
-        const getSelectedText = (e) => {
-            if (e.selectedIndex === -1) {return null;}
-            return e.options[e.selectedIndex].text;
-        };
-
-        let splitted = item.value.split(/\r?\n/);
-        let lineNumbers = "", codeLines = "";
-        let lineNumer = 1;
-        let content = "";
-        // content += '<div class="codehl">';
-        content += '<div class="codehl chLang_'+lan.value+' chParser_JS">';// style="width: 95%;"';// data-language="cpp" ';
-        // content += 'data-parser="JS" data-mce-style="width: 95%;">';
-        content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
-        content += '<span class="language">CodeHL 3.0 [pre-alpha] <b>['+getSelectedText(lan);
-        content +=']</b></span></th></tr></thead><tbody><tr><td>';
-
-        window.console.log("Language "+lan.value);
-
-        for(let el in splitted)
-        {
-            lineNumbers += "<pre>"+(lineNumer++)+"</pre>";
-            codeLines += "<pre>"+splitted[el]+"</pre>";
-        }
-        content += lineNumbers;
-        content += '</td><td>';
-        content += codeLines;
-        content += '</td></tr></tbody></table></div></div>';
-
-        editor.insertContent(content);
+        insertCode(editor);
     });
 };
 
