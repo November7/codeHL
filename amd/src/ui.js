@@ -72,9 +72,9 @@ const displayDialogue = async(editor) => {
         let lineNumbers = "", codeLines = "";
         let lineNumer = 1;
         let content = "";
-        content += '<div class="codehl">';
-        content += '<div class="chLang_'+lan.value+' chParser_JS" style="width: 95%;"';// data-language="cpp" ';
-        content += 'data-parser="JS" data-mce-style="width: 95%;">';
+        // content += '<div class="codehl">';
+        content += '<div class="codehl chLang_'+lan.value+' chParser_JS">';// style="width: 95%;"';// data-language="cpp" ';
+        // content += 'data-parser="JS" data-mce-style="width: 95%;">';
         content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
         content += '<span class="language">CodeHL 3.0 [pre-alpha] <b>['+getSelectedText(lan);
         content +=']</b></span></th></tr></thead><tbody><tr><td>';
