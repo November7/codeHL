@@ -28,6 +28,7 @@ use context;
 use editor_tiny\plugin;
 use editor_tiny\plugin_with_buttons;
 use editor_tiny\plugin_with_menuitems;
+use filter_manager;
 
 class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menuitems {
 
