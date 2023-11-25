@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'codehighlighter';
+$string['pluginname'] = 'Code Highlighter 3.0';
 $string['modaltitle'] = 'Insert code';
 $string['editcode'] = 'Edit code';
 $string['savecode'] = 'Save code';
