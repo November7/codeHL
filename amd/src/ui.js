@@ -38,7 +38,7 @@ export const handleAction = (editor) => {
 };
 
 /**
- * displayDialogue.
+ * displayDialog.
  *
  * @param {TinyMCE} editor
  * @returns {Promise<void>}
