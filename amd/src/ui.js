@@ -23,8 +23,7 @@
 
 import ModalFactory from 'core/modal_factory';
 import ModalEvents from 'core/modal_events';
-import LinkModal from './modal';
-import {insertCode,getSelectedCode} from './highlighter';
+import HighlighterModal from './modal';
 
 // import {debounce} from 'core/utils';
 
@@ -35,7 +34,7 @@ import {insertCode,getSelectedCode} from './highlighter';
  */
 
 export const handleAction = (editor) => {
-    displayDialogue(editor);
+    displayDialog(editor);
 };
 
 /**
@@ -44,43 +43,81 @@ export const handleAction = (editor) => {
  * @param {TinyMCE} editor
  * @returns {Promise<void>}
  */
-const displayDialogue = async(editor) => {
-    let data = {};
-    const modalPromises = await ModalFactory.create({
-        type: LinkModal.TYPE,
-        templateContext: getTemplateContext(editor,data),
+
+const displayDialog = async(editor) => {
+    const modal = await ModalFactory.create({
+        type: HighlighterModal.TYPE,
+        templateContext: Object.assign({}, {elementid: editor.id,}, {}),
         large: true,
     });
+    modal.show();
+    const $root = await modal.getRoot();
 
-    modalPromises.show();
-    const $root = await modalPromises.getRoot();
 
-    const item = document.getElementById('id_content_editor_tiny_codehighlighter');
-
-    item.value = getSelectedCode(editor);
+    let sel = editor.selection.getNode();
+    let codeHLTag = getCodeHLTag(sel);
+    if(codeHLTag && codeHLTag.querySelectorAll('TD')) {
+        const item = document.getElementById('id_content_editor_tiny_codehighlighter');
+        item.value = codeHLTag.querySelectorAll('TD')[1].innerText;
+    }
 
     $root.on(ModalEvents.hidden, () => {
-        modalPromises.destroy();
+        modal.destroy();
     });
 
-
-    let btn = document.getElementById('save_tiny_codehighlighter');
-    btn.addEventListener('click', () => {
+    $root.on(ModalEvents.save, () => {
+        if(codeHLTag) {
+            codeHLTag.remove();
+        }
         insertCode(editor);
     });
 };
 
 /**
- * getTemplateContext.
- *
- * @param {TinyMCE} editor
- * @param {Object} data
- * @returns {Object}
+ * Get selected Code.
+ * @param {HTMLElement} node
+ * @returns {string}
  */
 
-const getTemplateContext = (editor,data) => {
+export const getCodeHLTag = (node) => {
+    while(node && !node.classList.contains("codehl")) {node = node.parentElement;}
+    return node;
+};
 
-    return Object.assign({}, {
-        elementid: editor.id,
-    }, data);
+
+/**
+ * Handle insertion of a new equation, or update of an existing one.
+ * @param {TinyMCE} editor
+ */
+
+export const insertCode = (editor) => {
+    const item = document.getElementById('id_content_editor_tiny_codehighlighter');
+    let lan = document.getElementById('id_content_editor_tiny_codehihlighter_langugage');
+    const getSelectedText = (e) => {
+        if (e.selectedIndex === -1) {return null;}
+        return e.options[e.selectedIndex].text;
+    };
+
+    let splitted = item.value.split(/\r?\n/);
+    let lineNumbers = "", codeLines = "";
+    let lineNumer = 1;
+    let content = "";
+    content += '<div class="codehl chLang_'+lan.value+' chParser_JS">';
+    content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
+    content += '<span class="language">CodeHL 3.0 [pre-alpha] <b>['+getSelectedText(lan);
+    content +=']</b></span></th></tr></thead><tbody><tr><td>';
+
+    window.console.log("Language "+lan.value);
+
+    for(let el in splitted)
+    {
+        lineNumbers += "<pre>"+(lineNumer++)+"</pre>";
+        codeLines += "<pre>"+splitted[el]+"</pre>";
+    }
+    content += lineNumbers;
+    content += '</td><td>';
+    content += codeLines;
+    content += '</td></tr></tbody></table></div></div><br/>';
+
+    editor.insertContent(content);
 };

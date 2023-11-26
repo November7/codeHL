@@ -29,10 +29,7 @@ const HighlighterModal = class extends Modal {
     static TEMPLATE = 'tiny_codehighlighter/modal';
 
     registerEventListeners() {
-        // Call the parent registration.
         super.registerEventListeners();
-
-        // Register to close on save/cancel.
         this.registerCloseOnSave();
         this.registerCloseOnCancel();
     }
