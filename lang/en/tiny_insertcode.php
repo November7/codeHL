@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     codehl_tiny
+ * @package     tiny_insertcode
  * @category    string
  * @copyright   2023 me <m.kowalski.nov7@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

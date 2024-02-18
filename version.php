@@ -17,14 +17,16 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     codehl_tiny
+ * @package     tiny_insertcode
  * @copyright   2023 me <m.kowalski.nov7@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'tiny_codehl_tiny';
+// tiny_insertcode: Nazwa pluginu dla TinyMCE musi być poprzedzona prefixem: tiny_
+
+$plugin->component = 'tiny_insertcode';
 $plugin->release = '3.0.1';
-$plugin->version = 2024021801;
+$plugin->version = 2024021804;
 $plugin->requires = 2022112800;

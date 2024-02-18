@@ -16,7 +16,7 @@
 /**
  * CodeHighlighter for TinyMCE.
  *
- * @module      codehl_tiny/modal
+ * @module      tiny_insertcode/modal
  * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,8 +25,8 @@ import Modal from 'core/modal';
 import ModalRegistry from 'core/modal_registry';
 
 const HighlighterModal = class extends Modal {
-    static TYPE = 'codehl_tiny/modal';
-    static TEMPLATE = 'codehl_tiny/modal';
+    static TYPE = 'insertcode/modal';
+    static TEMPLATE = 'insertcode/modal';
 
     registerEventListeners() {
         super.registerEventListeners();

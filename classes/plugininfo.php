@@ -17,12 +17,12 @@
 /**
  * Tiny codehighlighter plugin for Moodle.
  *
- * @package     codehl_tiny
+ * @package     tiny_insertcode
  * @copyright   2023 me <m.kowalski.nov7@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace codehl_tiny;
+namespace insertcode;
 
 use context;
 use editor_tiny\plugin;
@@ -34,13 +34,13 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
 
     public static function get_available_buttons(): array {
         return [
-            'codehl_tiny/plugin',
+            'insertcode/plugin',
         ];
     }
 
     public static function get_available_menuitems(): array {
         return [
-            'codehl_tiny/plugin',
+            'insertcode/plugin',
         ];
     }
 }
