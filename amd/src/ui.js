@@ -57,7 +57,7 @@ const displayDialog = async(editor) => {
     let sel = editor.selection.getNode();
     let codeHLTag = getCodeHLTag(sel);
     if(codeHLTag && codeHLTag.querySelectorAll('TD')) {
-        const item = document.getElementById('id_content_editor_insertcode');
+        const item = document.getElementById('id_content_editor_tiny_insertcode');
         item.value = codeHLTag.querySelectorAll('TD')[1].innerText;
     }
 
@@ -91,8 +91,8 @@ export const getCodeHLTag = (node) => {
  */
 
 export const insertCode = (editor) => {
-    const item = document.getElementById('id_content_editor_insertcode');
-    let lan = document.getElementById('id_content_editor_insertcode_langugage');
+    const item = document.getElementById('id_content_editor_tiny_insertcode');
+    let lan = document.getElementById('id_content_editor_tiny_insertcode_langugage');
     const getSelectedText = (e) => {
         if (e.selectedIndex === -1) {return null;}
         return e.options[e.selectedIndex].text;
@@ -104,7 +104,7 @@ export const insertCode = (editor) => {
     let content = "";
     content += '<div class="codehl chLang_'+lan.value+' chParser_JS">';
     content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
-    content += '<span class="language">CodeHL 3.0.0<b>['+getSelectedText(lan);
+    content += '<span class="language"><b>['+getSelectedText(lan);
     content +=']</b></span></th></tr></thead><tbody><tr><td>';
 
     window.console.log("Language "+lan.value);
@@ -117,7 +117,9 @@ export const insertCode = (editor) => {
     content += lineNumbers;
     content += '</td><td>';
     content += codeLines;
-    content += '</td></tr></tbody></table></div></div><br/>';
+    content += '</td></tr></tbody>';
+    content += '<tfoot><tr><td colspan="2"><small>InsertCode ver. 3.0.0</small></td></tr></tfoot>';
+    content += '</table></div></div><br/>';
 
     editor.insertContent(content);
 };

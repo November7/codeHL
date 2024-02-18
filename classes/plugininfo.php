@@ -22,7 +22,7 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace insertcode;
+namespace tiny_insertcode;
 
 use context;
 use editor_tiny\plugin;
@@ -34,13 +34,13 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
 
     public static function get_available_buttons(): array {
         return [
-            'insertcode/plugin',
+            'tiny_insertcode/plugin',
         ];
     }
 
     public static function get_available_menuitems(): array {
         return [
-            'insertcode/plugin',
+            'tiny_insertcode/plugin',
         ];
     }
 }

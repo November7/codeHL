@@ -46,31 +46,31 @@
 {{< core/modal }}
 
     {{$title}}
-        {{#str}} modaltitle, insertcode {{/str}}
+        {{#str}} modaltitle, tiny_insertcode {{/str}}
     {{/title}}
 
     {{$body}}
         <form class='mform' id='{{uniqid}}''>
-            <label for='{{elementid}}_insertcode'>{{#str}} editcode, insertcode{{/str}}</label>
-            <textarea class='fullwidth text-ltr w-100' id='{{elementid}}_insertcode' rows='8'>{{equation}}</textarea>
+            <label for='{{elementid}}_tiny_insertcode'>{{#str}} editcode, tiny_insertcode{{/str}}</label>
+            <textarea class='fullwidth text-ltr w-100' id='{{elementid}}_tiny_insertcode' rows='8'>{{equation}}</textarea>
             <fieldset>
-            <legend>{{#str}}legend, tiny_codehighlighter{{/str}}</legend>
-            <label for='{{elementid}}_insertcode_langugage'>{{#str}}selectlanguage, insertcode{{/str}}</label>
-            <select name='{{elementid}}_insertcode_langugage' id='{{elementid}}_insertcode_langugage'>
+            <legend>{{#str}}legend, tiny_insertcode{{/str}}</legend>
+            <label for='{{elementid}}_tiny_insertcode_langugage'>{{#str}}selectlanguage, tiny_insertcode{{/str}}</label>
+            <select name='{{elementid}}_tiny_insertcode_langugage' id='{{elementid}}_tiny_insertcode_langugage'>
             <option value='cpp'>C/C++</option>
             <option value='python'>Python</option>
             <option value='shell'>Shell</option>
             <option value='php'>PHP</option>
             </select><br/>
-            <label for='{{elementid}}_insertcode_linesnumbers'>{{#str}}linesnumbers, insertcode{{/str}}</label>
-            <input type='checkbox' name='{{elementid}}_insertcode_linesnumbers' checked>
+            <label for='{{elementid}}_tiny_insertcode_linesnumbers'>{{#str}}linesnumbers, tiny_insertcode{{/str}}</label>
+            <input type='checkbox' name='{{elementid}}_tiny_insertcode_linesnumbers' checked>
             </fieldset>
         </form>
 
     {{/body}}
 
     {{$footer}}
-        <button type='button' class='btn btn-primary' id='save_insertcode' data-action='save'>{{#str}} savecode, insertcode{{/str}}</button>
+        <button type='button' class='btn btn-primary' id='save_tiny_insertcode' data-action='save'>{{#str}} savecode, tiny_insertcode{{/str}}</button>
     {{/footer}}
 
 {{/ core/modal }}

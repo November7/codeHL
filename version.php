@@ -28,5 +28,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_insertcode';
 $plugin->release = '3.0.1';
-$plugin->version = 2024021804;
+$plugin->version = 2024021806;
 $plugin->requires = 2022112800;

@@ -25,8 +25,8 @@ import Modal from 'core/modal';
 import ModalRegistry from 'core/modal_registry';
 
 const HighlighterModal = class extends Modal {
-    static TYPE = 'insertcode/modal';
-    static TEMPLATE = 'insertcode/modal';
+    static TYPE = 'tiny_insertcode/modal';
+    static TEMPLATE = 'tiny_insertcode/modal';
 
     registerEventListeners() {
         super.registerEventListeners();
