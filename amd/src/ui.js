@@ -118,7 +118,7 @@ export const insertCode = (editor) => {
     content += '</td><td>';
     content += codeLines;
     content += '</td></tr></tbody>';
-    content += '<tfoot><tr><td colspan="2"><small>InsertCode ver. 3.0.0</small></td></tr></tfoot>';
+    content += '<tfoot><tr><td colspan="2"><span class="version">InsertCode ver. 3.0.0</span></td></tr></tfoot>';
     content += '</table></div></div><br/>';
 
     editor.insertContent(content);
