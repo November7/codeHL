@@ -49,6 +49,5 @@ export default new Promise(async(resolve) => {
         // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
         return pluginMetadata;
     });
-    let x = 123;
     resolve([pluginName, Configuration]);
 });
