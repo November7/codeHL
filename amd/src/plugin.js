@@ -46,8 +46,6 @@ export default new Promise(async(resolve) => {
     tinyMCE.PluginManager.add(pluginName, (editor) => {
         // Setup any commands such as buttons, menu items, and so on.
         setupCommands(editor);
-        let x = 3;
-        window.console.log(x);
         // Return the pluginMetadata object. This is used by TinyMCE to display a help link for your plugin.
         return pluginMetadata;
     });
