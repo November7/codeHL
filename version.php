@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'codehl_tiny';
+$plugin->component = 'tiny_codehl_tiny';
 $plugin->release = '3.0.1';
 $plugin->version = 2024021801;
 $plugin->requires = 2022112800;
