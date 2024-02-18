@@ -104,7 +104,7 @@ export const insertCode = (editor) => {
     let content = "";
     content += '<div class="codehl chLang_'+lan.value+' chParser_JS">';
     content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
-    content += '<span class="language">CodeHL 3.0 [pre-alpha] <b>['+getSelectedText(lan);
+    content += '<span class="language">CodeHL 3.0.0<b>['+getSelectedText(lan);
     content +=']</b></span></th></tr></thead><tbody><tr><td>';
 
     window.console.log("Language "+lan.value);
