@@ -16,7 +16,7 @@
 /**
  * CodeHighlighter for TinyMCE.
  *
- * @module      tiny_codehighlighter/plugin
+ * @module      codehl_tiny/plugin
  * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

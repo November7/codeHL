@@ -16,7 +16,7 @@
 /**
  * CodeHighlighter for TinyMCE.
  *
- * @module      tiny_codehighlighter/ui
+ * @module      codehl_tiny/ui
  * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -57,7 +57,7 @@ const displayDialog = async(editor) => {
     let sel = editor.selection.getNode();
     let codeHLTag = getCodeHLTag(sel);
     if(codeHLTag && codeHLTag.querySelectorAll('TD')) {
-        const item = document.getElementById('id_content_editor_tiny_codehighlighter');
+        const item = document.getElementById('id_content_editor_codehl_tiny');
         item.value = codeHLTag.querySelectorAll('TD')[1].innerText;
     }
 
@@ -91,8 +91,8 @@ export const getCodeHLTag = (node) => {
  */
 
 export const insertCode = (editor) => {
-    const item = document.getElementById('id_content_editor_tiny_codehighlighter');
-    let lan = document.getElementById('id_content_editor_tiny_codehihlighter_langugage');
+    const item = document.getElementById('id_content_editor_codehl_tiny');
+    let lan = document.getElementById('id_content_editor_codehl_tiny_langugage');
     const getSelectedText = (e) => {
         if (e.selectedIndex === -1) {return null;}
         return e.options[e.selectedIndex].text;

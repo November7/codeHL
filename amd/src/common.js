@@ -16,12 +16,12 @@
 /**
  * CodeHighlighter for TinyMCE.
  *
- * @module      tiny_codehighlighter/common
+ * @module      codehl_tiny/common
  * @copyright   2023 Nov <m.kowalski.nov7@gmail.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-const component = 'tiny_codehighlighter';
+const component = 'codehl_tiny';
 
 export default {
     component,

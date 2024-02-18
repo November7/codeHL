@@ -17,15 +17,15 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     tiny_codehighlighter
+ * @package     codehl_tiny
  * @category    string
- * @copyright   2023 me <som@domain.com>
+ * @copyright   2023 me <m.kowalski.nov7@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'codehighlighter';
+$string['pluginname'] = 'Code Highlighter for TinyMCE';
 $string['modaltitle'] = 'Insert code';
 $string['editcode'] = 'Edit code';
 $string['savecode'] = 'Save code';

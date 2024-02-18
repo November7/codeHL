@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template tiny_equation/modal
+    @template codehl_tiny/modal
 
     Modal to manage an Equation within the Tiny Editor.
 
@@ -46,31 +46,31 @@
 {{< core/modal }}
 
     {{$title}}
-        {{#str}} modaltitle, tiny_codehighlighter {{/str}}
+        {{#str}} modaltitle, codehl_tiny {{/str}}
     {{/title}}
 
     {{$body}}
         <form class='mform' id='{{uniqid}}''>
-            <label for='{{elementid}}_tiny_codehighlighter'>{{#str}} editcode, tiny_codehighlighter{{/str}}</label>
-            <textarea class='fullwidth text-ltr w-100' id='{{elementid}}_tiny_codehighlighter' rows='8'>{{equation}}</textarea>
+            <label for='{{elementid}}_codehl_tiny'>{{#str}} editcode, codehl_tiny{{/str}}</label>
+            <textarea class='fullwidth text-ltr w-100' id='{{elementid}}_codehl_tiny' rows='8'>{{equation}}</textarea>
             <fieldset>
             <legend>{{#str}}legend, tiny_codehighlighter{{/str}}</legend>
-            <label for='{{elementid}}_tiny_codehihlighter_langugage'>{{#str}}selectlanguage, tiny_codehighlighter{{/str}}</label>
-            <select name='{{elementid}}_tiny_codehihlighter_langugage' id='{{elementid}}_tiny_codehihlighter_langugage'>
+            <label for='{{elementid}}_codehl_tiny_langugage'>{{#str}}selectlanguage, codehl_tiny{{/str}}</label>
+            <select name='{{elementid}}_codehl_tiny_langugage' id='{{elementid}}_codehl_tiny_langugage'>
             <option value='cpp'>C/C++</option>
             <option value='python'>Python</option>
             <option value='shell'>Shell</option>
             <option value='php'>PHP</option>
             </select><br/>
-            <label for='{{elementid}}_tiny_codehihlighter_linesnumbers'>{{#str}}linesnumbers, tiny_codehighlighter{{/str}}</label>
-            <input type='checkbox' name='{{elementid}}_tiny_codehihlighter_linesnumbers' checked>
+            <label for='{{elementid}}_codehl_tiny_linesnumbers'>{{#str}}linesnumbers, codehl_tiny{{/str}}</label>
+            <input type='checkbox' name='{{elementid}}_codehl_tiny_linesnumbers' checked>
             </fieldset>
         </form>
 
     {{/body}}
 
     {{$footer}}
-        <button type='button' class='btn btn-primary' id='save_tiny_codehighlighter' data-action='save'>{{#str}} savecode, tiny_codehighlighter{{/str}}</button>
+        <button type='button' class='btn btn-primary' id='save_codehl_tiny' data-action='save'>{{#str}} savecode, codehl_tiny{{/str}}</button>
     {{/footer}}
 
 {{/ core/modal }}

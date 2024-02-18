@@ -17,14 +17,14 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     tiny_codehighlighter
- * @copyright   2023 me <som@domain.com>
+ * @package     codehl_tiny
+ * @copyright   2023 me <m.kowalski.nov7@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'tiny_codehighlighter';
+$plugin->component = 'codehl_tiny';
 $plugin->release = '3.0.1';
-$plugin->version = 2023112502;
+$plugin->version = 2024021801;
 $plugin->requires = 2022112800;
