@@ -27,6 +27,6 @@ defined('MOODLE_INTERNAL') || die();
 // tiny_insertcode: Nazwa pluginu dla TinyMCE musi być poprzedzona prefixem: tiny_
 
 $plugin->component = 'tiny_insertcode';
-$plugin->release = '3.0.1';
+$plugin->release = '3.0.2';
 $plugin->version = 2024021901;
 $plugin->requires = 2022112800;

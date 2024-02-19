@@ -59,6 +59,12 @@ const displayDialog = async(editor) => {
     if(codeHLTag && codeHLTag.querySelectorAll('TD')) {
         const item = document.getElementById('id_content_editor_tiny_insertcode');
         item.value = codeHLTag.querySelectorAll('TD')[1].innerText;
+        let lan = document.getElementById('id_content_editor_tiny_insertcode_langugage');
+
+        let detectedLang = codeHLTag.classList.value.match(/chLang_\S+/g)[0].slice(7);
+        window.console.log(detectedLang);
+        lan.value = detectedLang;
+
     }
 
     $root.on(ModalEvents.hidden, () => {
@@ -118,7 +124,7 @@ export const insertCode = (editor) => {
     content += '</td><td>';
     content += codeLines;
     content += '</td></tr></tbody>';
-    content += '<tfoot><tr><td colspan="2"><span class="version">InsertCode ver. 3.0.1</span></td></tr></tfoot>';
+    content += '<tfoot><tr><td colspan="2"><span class="version">InsertCode ver. 3.0.2</span></td></tr></tfoot>';
     content += '</table></div></div><br/>';
 
     editor.insertContent(content);
