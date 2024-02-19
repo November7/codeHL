@@ -102,7 +102,7 @@ export const insertCode = (editor) => {
     let lineNumbers = "", codeLines = "";
     let lineNumer = 1;
     let content = "";
-    content += '<div class="codehl chLang_'+lan.value+' chParser_JS">';
+    content += '<div class="codehl chLang_'+lan.value+'">';
     content += '<table class="normal mce-item-table"><thead><tr><th colspan="2"><span class="title"></span>';
     content += '<span class="language"><b>['+getSelectedText(lan);
     content +=']</b></span></th></tr></thead><tbody><tr><td>';
@@ -118,7 +118,7 @@ export const insertCode = (editor) => {
     content += '</td><td>';
     content += codeLines;
     content += '</td></tr></tbody>';
-    content += '<tfoot><tr><td colspan="2"><span class="version">InsertCode ver. 3.0.0</span></td></tr></tfoot>';
+    content += '<tfoot><tr><td colspan="2"><span class="version">InsertCode ver. 3.0.1</span></td></tr></tfoot>';
     content += '</table></div></div><br/>';
 
     editor.insertContent(content);
