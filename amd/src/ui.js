@@ -60,7 +60,6 @@ const displayDialog = async(editor) => {
         const item = document.getElementById('id_content_editor_tiny_insertcode');
         item.value = codeHLTag.querySelectorAll('TD')[1].innerText;
         let lan = document.getElementById('id_content_editor_tiny_insertcode_langugage');
-
         let detectedLang = codeHLTag.classList.value.match(/chLang_\S+/g)[0].slice(7);
         window.console.log(detectedLang);
         lan.value = detectedLang;
